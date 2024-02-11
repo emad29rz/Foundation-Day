@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>صفحة الدعم الفني</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      text-align: right;
+      margin: 0;
+      padding: 0;
+      background-color: #ffffff; /* لون الخلفية */
+      color: #ffffff; /* لون النص */
+    }
+    h1 {
+      text-align: center;
+      padding: 20px 0;
+    }
+    form {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #ffffff; /* لون خلفية النموذج */
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* ظل للنموذج */
+    }
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+    input[type="text"],
+    textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #674C43; /* لون زر الإرسال */
+      color: #ffffff; /* لون نص الزر */
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #512E21; /* لون الزر عند التحويل */
+    }
+  </style>
+  <script>
+    function sendMessage() {
+      var firstName = document.getElementById("first-name").value;
+      var lastName = document.getElementById("last-name").value;
+      var problem = document.getElementById("problem").value;
+      
+      var message = "الاسم الأول: " + firstName + "%0A" +
+                    "الاسم الثاني: " + lastName + "%0A" +
+                    "عنوان المشكلة: " + problem;
+      
+      var whatsappLink = "https://wa.me/966598846325?text=" + encodeURIComponent(message);
+      window.location.href = whatsappLink;
+    }
+  </script>
+</head>
+<body>
+  <h1>صفحة الدعم الفني</h1>
+  <form>
+    <label for="first-name">الاسم الأول:</label>
+    <input type="text" id="first-name" name="first-name" placeholder="أدخل الاسم الأول">
+    
+    <label for="last-name">الاسم الثاني:</label>
+    <input type="text" id="last-name" name="last-name" placeholder="أدخل الاسم الثاني">
+    
+    <label for="problem">عنوان المشكلة:</label>
+    <textarea id="problem" name="problem" placeholder="أدخل عنوان المشكلة"></textarea>
+    
+    <button type="button" onclick="sendMessage()">إرسال</button>
+  </form>
+</body>
+</html>
